@@ -1,0 +1,691 @@
+# TASK: BUILD AUTODESIGN — COMPLETE STATIC WEB APPLICATION
+
+Act as a senior frontend engineer, UI/UX designer, and design systems specialist.
+
+Build a complete, polished, fully interactive static web application named **AutoDesign**, based on the concept of asset-based AI design automation described below.
+
+Do not stop at planning, wireframes, or recommendations. Inspect the existing workspace, create the actual implementation files, run available checks, and fix discovered problems before finishing.
+
+## 1. Project Objective
+
+AutoDesign is an AI-assisted design automation application for creating product promotional materials using existing, approved visual assets.
+
+Its core principle:
+
+"AI does not recreate the product. AI analyzes, arranges, and automates the design."
+
+The application must demonstrate a workflow that combines:
+
+1. Asset management.
+2. Brand identity management.
+3. Design template selection.
+4. Visual composition and editing.
+5. Rule-based design recommendations.
+6. Product asset integrity protection.
+7. Brand and layout validation.
+8. Multi-platform design adaptation.
+9. Export and project history.
+
+This is a frontend-only prototype intended for deployment on GitHub Pages.
+
+The interface must look and behave like a real design SaaS product, not a generic AI dashboard or a static landing page.
+
+## 2. Strict Technology Constraints
+
+Use ONLY:
+
+- HTML5.
+- CSS3.
+- Vanilla JavaScript (ES6+).
+- Tailwind CSS through its CDN/browser integration.
+- Google Material Symbols or Google Material Icons for interface icons.
+
+Do NOT use:
+
+- React.
+- Vue.
+- Angular.
+- Svelte.
+- Next.js.
+- Nuxt.
+- TypeScript.
+- JSX or TSX.
+- Node.js as an application runtime.
+- PHP or Python.
+- Backend services.
+- Build tools that are required to run the application.
+- Local databases requiring a server.
+- Emoji as interface icons.
+- Large third-party UI component libraries.
+
+Tailwind must load from its official CDN/browser integration. Custom CSS is allowed for editor canvas behavior, intricate layouts, animations, and details that are difficult to implement cleanly with utility classes.
+
+Use Google Fonts, preferably Inter, and Google Material Symbols Rounded or Material Symbols Outlined.
+
+Use ordinary browser JavaScript modules where appropriate, while ensuring that the application works when hosted on GitHub Pages over HTTPS.
+
+The project must not require `npm install`, a build command, or a backend server.
+
+External CDN dependencies may be used for fonts, icons, and Tailwind, but application functionality must not depend on an external AI API.
+
+Never expose API keys or ask the user to insert secret credentials into frontend files.
+
+## 3. Project Structure
+
+Use a maintainable structure such as:
+
+/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── store.js
+│   │   ├── router.js
+│   │   ├── utils.js
+│   │   ├── dashboard.js
+│   │   ├── asset-library.js
+│   │   ├── brand-kit.js
+│   │   ├── design-studio.js
+│   │   ├── templates.js
+│   │   ├── export.js
+│   │   ├── validation.js
+│   │   └── projects.js
+│   └── images/
+│       └── sample-assets/
+├── README.md
+└── .nojekyll
+
+You may improve this structure if necessary, but keep it simple, readable, and compatible with static hosting.
+
+Use relative paths for local resources. Avoid root-relative URLs that break when the repository is hosted under a GitHub Pages project subpath.
+
+Do not generate unnecessary files or empty placeholder modules.
+
+If using ES modules, test the application through an HTTP server or GitHub Pages rather than relying on `file://` behavior.
+
+## 4. Design Philosophy
+
+Create a professional, editorial, understated creative application.
+
+The visual direction should combine the usability of a professional design editor with the clarity of a modern SaaS workspace.
+
+Avoid the typical AI-generated UI aesthetic:
+- No excessive gradients.
+- No glowing blue-purple backgrounds.
+- No glassmorphism everywhere.
+- No oversized decorative headings.
+- No random floating cards.
+- No unnecessary charts.
+- No excessive rounded pills.
+- No excessive shadows.
+- No emoji.
+- No meaningless placeholder content.
+
+Use:
+- White and subtle neutral backgrounds.
+- Dark charcoal typography.
+- Restrained blue accents.
+- Fine borders.
+- Carefully balanced whitespace.
+- Compact but readable controls.
+- Consistent alignment.
+- Realistic design previews.
+- A deliberate visual hierarchy.
+
+### Design Tokens
+
+Primary: #2563EB
+Primary hover: #1D4ED8
+Background: #F7F8FA
+Surface: #FFFFFF
+Main text: #171A23
+Secondary text: #687386
+Border: #E5E7EB
+Success: #15803D
+Warning: #B45309
+Error: #B91C1C
+
+Use an 8 px spacing system, consistent typography, and reusable CSS variables.
+
+Use 1440 px desktop layouts as the primary reference. The interface must remain usable on tablet and mobile screens.
+
+## 5. Application Shell
+
+Build a persistent application shell containing:
+
+### Sidebar
+
+- AutoDesign wordmark.
+- Workspace switcher.
+- Dashboard.
+- Projects.
+- Design Studio.
+- Asset Library.
+- Brand Kit.
+- Templates.
+- Export.
+- Validation History.
+- Settings.
+
+The active navigation item must be visually distinct.
+
+### Header
+
+- Current page title or breadcrumb.
+- Search control.
+- Notification indicator.
+- Workspace or user profile.
+- Primary contextual action.
+- Save or project status when relevant.
+
+Include a collapsible sidebar and a functional mobile navigation drawer.
+
+Use Google Material Symbols consistently with appropriate accessible labels.
+
+## 6. Dashboard
+
+Build a complete dashboard with:
+
+- Welcome message.
+- Create New Design action.
+- Upload Assets action.
+- Total Assets.
+- Approved Assets.
+- Active Projects.
+- Ready-to-Export Designs.
+- Recent Projects.
+- Recently Used Templates.
+- Recent Activity.
+- Asset Approval Summary.
+- Brand Consistency Summary.
+
+Use meaningful sample data.
+
+Recent project cards must display actual design thumbnails, not generic gray rectangles.
+
+Provide functional navigation from project cards to their respective projects or editor screens.
+
+Avoid decorative charts that do not communicate useful information.
+
+## 7. Asset Library
+
+Build a functional asset management interface.
+
+Supported asset categories:
+- Product Photos.
+- Transparent PNGs.
+- Logos.
+- Typography.
+- Brand Colors.
+- Icons.
+- Backgrounds.
+- Templates.
+- 3D Models.
+
+Required functionality:
+- Upload images through a file input.
+- Drag-and-drop image upload.
+- Image previews.
+- Asset grid and list views.
+- Search by asset name.
+- Filter by type and approval status.
+- Sort by name and date.
+- Asset detail panel.
+- Edit asset metadata.
+- Assign assets to brands or products.
+- Mark assets as approved, pending, or rejected.
+- Delete assets with confirmation.
+- Preview image dimensions and file format.
+- Show original file name.
+- Show asset integrity and lock status.
+
+Use browser object URLs for temporary image previews and release them when no longer needed.
+
+Treat uploaded original assets as immutable source files. Never overwrite or transform the original upload.
+
+Create an asset detail drawer or modal that displays metadata, dimensions, associated brand, approval status, and version information when available.
+
+Allow the user to add a sample asset library so the application is useful immediately after opening it.
+
+Clearly distinguish built-in demo assets from user-uploaded assets.
+
+## 8. Brand Kit
+
+Implement a brand identity management screen.
+
+Features:
+- Brand name and description.
+- Logo collection.
+- Primary and secondary colors.
+- Color picker and hexadecimal input.
+- Typography selection.
+- Heading and body text styles.
+- Brand guidelines.
+- Product integrity rules.
+- Logo protection rules.
+- Background restrictions.
+- Approved templates.
+- Live brand preview.
+
+Changes to brand settings must update the appropriate previews.
+
+Store brand settings in browser storage.
+
+Show validation feedback for invalid color values or incomplete brand configuration.
+
+Do not pretend that a brand rule has been validated if no actual check has been performed.
+
+## 9. Design Studio — Core Feature
+
+This must be the most carefully designed and implemented screen.
+
+Create a real browser-based visual composition editor, not merely a screenshot of an editor.
+
+### Editor Layout
+
+Left panel:
+- Assets.
+- Layers.
+- Templates.
+
+Center:
+- Interactive design canvas.
+- Zoom controls.
+- Canvas fit.
+- Alignment guides.
+- Grid toggle.
+- Selection outlines.
+
+Right panel:
+- Selected element properties.
+- AI Design Assistant.
+- Layout recommendations.
+
+Top toolbar:
+- Project title.
+- Undo.
+- Redo.
+- Save status.
+- Preview.
+- Export.
+
+### Canvas Requirements
+
+Implement a canvas using HTML elements, CSS positioning, and JavaScript.
+
+A DOM-based canvas is acceptable and preferred for this prototype because it makes individual objects editable.
+
+Support:
+- Select an element.
+- Move elements with pointer interaction.
+- Resize supported elements with handles.
+- Edit text directly or through properties.
+- Change font size, font weight, and text alignment.
+- Change text color and background color.
+- Change element opacity.
+- Change layer order.
+- Duplicate elements.
+- Delete elements.
+- Lock and unlock elements.
+- Add text.
+- Add shapes.
+- Add images from the asset library.
+- Align elements.
+- Snap elements to a simple grid.
+- Undo and redo.
+- Zoom and fit canvas.
+- Change canvas dimensions.
+- Save the composition locally.
+- Load and continue editing a saved composition.
+
+Ensure that selection, dragging, resizing, and zooming work together correctly.
+
+Prevent toolbar interactions from accidentally starting a canvas drag.
+
+Do not allow protected product assets to be modified through ordinary editing controls.
+
+### Sample Design
+
+Create a realistic default campaign for a fictional Indonesian coffee brand.
+
+Brand: Kopi Senja
+Product: Kopi Susu Original
+Price: Rp18.000
+Headline: "Temukan Jeda Terbaikmu"
+CTA: "Pesan Sekarang"
+
+Create a professional promotional poster with a strong product image, balanced composition, readable typography, and an appropriate color palette.
+
+The product image must be a real image asset that is placed into the composition. Do not synthesize or redraw the product.
+
+Use available local sample images or reliable image resources. Provide local fallbacks so the interface does not become empty if an external image fails.
+
+### Asset Integrity
+
+Treat approved product images as source-of-truth assets.
+
+When a product image is selected:
+- Display a locked asset indicator when protection is enabled.
+- Disable destructive editing controls.
+- Allow proportional scaling and repositioning.
+- Prevent accidental cropping or distortion where possible.
+- Keep the original file unchanged.
+
+Distinguish layout transformations from modifications to the original image.
+
+## 10. AI Design Assistant
+
+Since this is a static prototype, implement the assistant as a transparent, deterministic rule-based design recommendation engine.
+
+Do not fabricate real AI inference or display misleading claims about external AI processing.
+
+The assistant should provide recommendations such as:
+- Improve visual hierarchy.
+- Align elements.
+- Adjust text spacing.
+- Improve contrast.
+- Suggest typography sizes.
+- Recommend a more balanced composition.
+- Identify possible overlap.
+- Suggest a suitable template.
+- Adapt a design for another platform.
+
+Each recommendation should include:
+- A short explanation.
+- The affected element, if applicable.
+- A Preview or Apply action.
+- A Dismiss action.
+
+Applying a recommendation must produce an actual change in the canvas.
+
+Examples:
+- Align the selected text with the canvas center.
+- Increase headline size.
+- Adjust spacing between elements.
+- Reposition a text element to avoid overlap.
+- Apply the selected brand color.
+- Generate alternative arrangements from existing assets.
+
+Use deterministic rules based on canvas dimensions, element bounds, brand settings, and selected objects.
+
+Keep the original product image unchanged.
+
+Include an explicit interface note stating that the current assistant uses local design rules and does not call a live AI model.
+
+## 11. Templates
+
+Create a useful template gallery with realistic thumbnails.
+
+Categories:
+- Product Promotion.
+- Social Media.
+- Marketplace.
+- Food and Beverage.
+- Beauty and Lifestyle.
+- Sale Campaign.
+- Editorial.
+- Minimalist.
+
+Features:
+- Search.
+- Category filtering.
+- Aspect ratio filtering.
+- Template preview.
+- Template details.
+- Use Template action.
+- Duplicate template.
+- Save a composition as a template where feasible.
+
+Using a template must load an actual editable composition into the design studio.
+
+Templates should use placeholders and approved asset references rather than generated product imagery.
+
+## 12. Multi-Platform Export
+
+Build a functional export interface.
+
+Support presets:
+- Instagram Square: 1080 × 1080.
+- Instagram Portrait: 1080 × 1350.
+- Story and Reels Cover: 1080 × 1920.
+- Landscape Banner: 1920 × 1080.
+- Custom dimensions.
+
+Show live previews for different aspect ratios.
+
+Implement actual layout adaptation using JavaScript rules, not simple image cropping.
+
+Preserve product proportions and maintain text readability.
+
+Provide:
+- Platform selection.
+- Width and height controls.
+- Safe-area guides.
+- Export format selection.
+- PNG export.
+- JPEG export.
+- SVG export where technically appropriate.
+- Download action.
+- Export status and validation feedback.
+
+For raster export, render the composition using browser-native canvas techniques or another lightweight client-side method compatible with the technology constraints.
+
+Do not assume that an HTML element can be exported directly through canvas without handling image loading, cross-origin restrictions, fonts, and unsupported effects.
+
+If an image cannot be exported because of browser security restrictions, explain the issue and provide a reasonable fallback.
+
+SVG export must preserve text, image references where appropriate, dimensions, and composition.
+
+Ensure that the downloaded file contains the actual current composition rather than a static placeholder image.
+
+## 13. Validation Engine
+
+Build a rule-based design validation system.
+
+Validate:
+- Product asset integrity.
+- Product asset approval.
+- Brand color compliance.
+- Logo protection.
+- Text contrast.
+- Text and element overlap.
+- Canvas boundary overflow.
+- Aspect ratio.
+- Required content fields.
+- Export dimensions.
+- Missing assets.
+
+Display:
+- Pass.
+- Warning.
+- Error.
+
+Each finding should include a description and a link or action to select the affected element.
+
+Allow the user to:
+- Run validation.
+- Inspect issues.
+- Jump to an affected object.
+- Apply supported fixes.
+- Re-run validation.
+- Mark a design as reviewed.
+
+Critical unresolved issues must prevent the interface from falsely declaring the design fully validated.
+
+Distinguish actual automated checks from manual review status.
+
+## 14. Projects and History
+
+Implement project management with:
+- Create project.
+- Rename project.
+- Duplicate project.
+- Open project.
+- Delete project with confirmation.
+- Search and filter.
+- Grid and list views.
+- Last modified date.
+- Project status.
+- Brand association.
+- Thumbnail preview.
+
+Implement local version snapshots for saved compositions.
+
+Support restoring a previous snapshot.
+
+Do not display fake activity as if it were real user activity. Demo history must be identified as sample data.
+
+## 15. Local Persistence
+
+Use localStorage for small metadata and application preferences.
+
+Use IndexedDB for larger user-generated data when appropriate, including image blobs and saved compositions.
+
+Provide:
+- Automatic local saving where appropriate.
+- Explicit save status.
+- Data recovery after reload.
+- A clear local-data notice.
+- Export and import of application project data in a documented JSON format where feasible.
+- Graceful error handling when browser storage is unavailable or full.
+
+Never claim that local browser data automatically synchronizes across devices.
+
+Never overwrite an existing project without confirmation when the action risks data loss.
+
+## 16. Settings
+
+Include:
+- Workspace information.
+- Appearance preferences.
+- Default export dimensions.
+- Default brand.
+- Canvas grid settings.
+- Snap-to-grid settings.
+- Local data management.
+- Import and export project data.
+- Reset demo data with confirmation.
+- About AutoDesign.
+
+Implement functional settings where feasible.
+
+## 17. Navigation and Application Behavior
+
+Implement a consistent client-side navigation system.
+
+All sidebar items must navigate to their corresponding views.
+
+The application must support browser back and forward navigation where appropriate.
+
+Avoid full-page reloads for ordinary internal navigation.
+
+Every visible button must have a defined action.
+
+Do not leave:
+- Dead buttons.
+- Empty links.
+- Placeholder click handlers.
+- Fake upload controls.
+- Fake export controls.
+- Nonfunctional dropdowns.
+- Unimplemented modal actions.
+
+For features that cannot be implemented within a static frontend, clearly label them as unavailable or simulated instead of pretending they work.
+
+Use accessible semantic HTML, keyboard navigation where practical, proper labels, focus states, and appropriate dialog behavior.
+
+## 18. Responsive Behavior
+
+Desktop:
+- Full sidebar.
+- Three-panel design editor.
+- Dense but readable layout.
+
+Tablet:
+- Collapsible sidebar.
+- Adjustable editor panels.
+- Reduced secondary controls.
+
+Mobile:
+- Compact navigation.
+- Responsive dashboard and asset library.
+- Editor panels that can be opened individually.
+- A canvas that remains usable without horizontal overflow.
+- Accessible controls with adequate touch targets.
+
+Do not simply scale down the desktop layout.
+
+## 19. Performance and Security
+
+- Avoid unnecessary dependencies.
+- Avoid excessive DOM re-rendering.
+- Clean up event listeners and object URLs.
+- Validate user input.
+- Escape user-provided text before rendering it as HTML.
+- Do not use eval or dynamically execute arbitrary strings.
+- Do not inject unsanitized SVG or HTML.
+- Use safe DOM APIs where possible.
+- Handle failed network requests and missing images.
+- Avoid loading huge assets unnecessarily.
+- Keep the application usable on ordinary laptops and mobile devices.
+
+## 20. GitHub Pages Compatibility
+
+This application will be hosted as a static GitHub Pages site.
+
+Requirements:
+- No backend dependency.
+- No required build step.
+- No server-side routing.
+- No root-relative asset paths that break project pages.
+- No dependence on a custom server configuration.
+- Include a README explaining local preview and GitHub Pages deployment.
+- Include a `.nojekyll` file if appropriate.
+- Ensure all paths and imports work under a repository subpath.
+- Provide clear deployment instructions for repository Settings → Pages.
+
+The site should work when opened through its GitHub Pages HTTPS URL.
+
+## 21. Implementation and Verification
+
+Before considering the project complete:
+
+1. Inspect the workspace.
+2. Create the implementation.
+3. Verify all HTML and JavaScript references.
+4. Check browser console errors.
+5. Test navigation.
+6. Test asset upload and preview.
+7. Test asset metadata and approval status.
+8. Test design element selection and editing.
+9. Test protected asset behavior.
+10. Test undo and redo.
+11. Test local save and reload recovery.
+12. Test template loading.
+13. Test design validation.
+14. Test export and downloaded output.
+15. Test responsive layouts.
+16. Test project-subpath compatibility.
+
+Fix discovered issues before finishing.
+
+Do not claim that a feature has been tested if it has not actually been tested.
+
+## 22. Final Deliverable
+
+Deliver a cohesive, functional, polished static web application, not just a visual mockup.
+
+The final product should demonstrate the complete AutoDesign concept:
+
+ASSETS + BRAND RULES
+→ DESIGN ANALYSIS
+→ COMPOSITION
+→ VALIDATION
+→ RENDERING
+→ MULTI-PLATFORM OUTPUT
+
+Prioritize visual quality, useful functionality, maintainable vanilla JavaScript, product integrity, and reliable GitHub Pages deployment.
+
+Begin implementation now.

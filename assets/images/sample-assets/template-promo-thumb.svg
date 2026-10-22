@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <rect width="600" height="600" rx="16" fill="#F6EFE6"/>
+  <circle cx="440" cy="300" r="190" fill="#EADBC8"/>
+  <rect x="48" y="56" width="160" height="38" rx="8" fill="#1E1815"/>
+  <text x="128" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#FFFBEB">KOPI SENJA</text>
+  <text x="48" y="185" font-family="Inter, sans-serif" font-size="40" font-weight="800" fill="#1E1815">Temukan Jeda</text>
+  <text x="48" y="235" font-family="Inter, sans-serif" font-size="40" font-weight="800" fill="#9A5B25">Terbaikmu</text>
+  <text x="48" y="285" font-family="Inter, sans-serif" font-size="18" font-weight="500" fill="#574C43">Kopi Susu Original · Gula Aren Asli</text>
+  <rect x="48" y="335" width="150" height="54" rx="10" fill="#FFFFFF" stroke="#D5BFA4" stroke-width="2"/>
+  <text x="123" y="370" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#1E1815">Rp18.000</text>
+  <rect x="48" y="425" width="210" height="58" rx="12" fill="#1E1815"/>
+  <text x="153" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Pesan Sekarang</text>
+  <rect x="355" y="130" width="170" height="350" rx="22" fill="#C89D74" stroke="#1E1815" stroke-width="4"/>
+  <rect x="355" y="245" width="170" height="110" fill="#1E1815"/>
+  <text x="440" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#F5EFE6">PRODUCT ASSET</text>
+</svg>
