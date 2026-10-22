@@ -1,0 +1,23 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Optional local logs or temporary files
+*.log
+tmp/
+temp/
+node_modules/
+
+# Ensure GitHub Pages configuration files are always tracked
+!.nojekyll
+!.github/
+!404.html

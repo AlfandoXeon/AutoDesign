@@ -58,7 +58,11 @@ ASSETS + BRAND RULES
 
 ```text
 /
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml
 ├── index.html
+├── 404.html
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
@@ -90,6 +94,7 @@ ASSETS + BRAND RULES
 │           ├── palette-senja-swatches.svg
 │           └── template-promo-thumb.svg
 ├── README.md
+├── .gitignore
 └── .nojekyll
 ```
 
@@ -117,6 +122,22 @@ Then open `http://localhost:8080` in your browser.
 ## 5. GitHub Pages Deployment Instructions
 
 All asset paths (`./assets/...`) and client-side hash routes (`#dashboard`, `#design-studio`, etc.) are strictly relative and compatible with both root domains and GitHub Pages project subpaths (`https://<username>.github.io/<repository-name>/`).
+
+### Included GitHub Configuration Files
+
+- **`.github/workflows/deploy-pages.yml`** — Automated GitHub Actions workflow (`actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, `actions/deploy-pages@v4`) that deploys the site on every push to `main` or `master`.
+- **`.nojekyll`** — Disables Jekyll processing so folders and files starting with underscores or dots are served directly without modification.
+- **`404.html`** — Custom GitHub Pages fallback page that automatically redirects known route paths (e.g., `/design-studio` → `/#design-studio`) or provides a direct return button to the workspace.
+- **`.gitignore`** — Excludes local OS/IDE temporary files while explicitly keeping `.nojekyll`, `404.html`, and `.github/` tracked.
+
+### Method A: Automated Deployment via GitHub Actions (Recommended)
+
+1. Push the repository contents to GitHub (`main` or `master` branch).
+2. In your GitHub repository, navigate to **Settings → Pages**.
+3. Under **Build and deployment → Source**, select **GitHub Actions**.
+4. The workflow in `.github/workflows/deploy-pages.yml` will run automatically on push (or can be triggered manually from the **Actions** tab) and publish the live URL.
+
+### Method B: Direct Branch Deployment
 
 1. Push the repository contents (including `.nojekyll` and `index.html` at the repository root) to your GitHub repository.
 2. In your GitHub repository, navigate to **Settings → Pages**.
